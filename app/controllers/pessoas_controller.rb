@@ -72,9 +72,10 @@ end
 
     respond_to do |format|
       if @pessoa.update_attributes(params[:pessoa])
-       #p.pessoa_id = params[:id]
-       #p = Residencia.new
-        p = Residencia.find_by_pessoa_id params[:id]
+       
+       p = Residencia.new
+       p.pessoa_id = params[:id]
+       # p = Residencia.find_by_pessoa_id params[:id]
         p.uh_id = params[:uh] 
         p.save
         

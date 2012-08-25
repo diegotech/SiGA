@@ -1,4 +1,4 @@
-1345864118
+1345866093
 Application	C:/tcc/SiGA/config/application.rb	  class Application 
 ApplicationController	C:/tcc/SiGA/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	C:/tcc/SiGA/app/helpers/application_helper.rb	module ApplicationHelper
@@ -118,8 +118,8 @@ create	C:/tcc/SiGA/app/controllers/cores_controller.rb	  def create
 create	C:/tcc/SiGA/app/controllers/veiculos_controller.rb	  def create
 create	C:/tcc/SiGA/app/controllers/uhs_controller.rb	  def create
 create	C:/tcc/SiGA/app/controllers/tipo_uhs_controller.rb	  def create
-create	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def create
 create	C:/tcc/SiGA/app/controllers/modelos_controller.rb	  def create
+create	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def create
 destroy	C:/tcc/SiGA/app/controllers/tipo_veics_controller.rb	  def destroy
 destroy	C:/tcc/SiGA/app/controllers/tipo_pessoas_controller.rb	  def destroy
 destroy	C:/tcc/SiGA/app/controllers/tipo_funcs_controller.rb	  def destroy
@@ -129,8 +129,8 @@ destroy	C:/tcc/SiGA/app/controllers/cores_controller.rb	  def destroy
 destroy	C:/tcc/SiGA/app/controllers/veiculos_controller.rb	  def destroy
 destroy	C:/tcc/SiGA/app/controllers/uhs_controller.rb	  def destroy
 destroy	C:/tcc/SiGA/app/controllers/tipo_uhs_controller.rb	  def destroy
-destroy	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def destroy
 destroy	C:/tcc/SiGA/app/controllers/modelos_controller.rb	  def destroy
+destroy	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def destroy
 drop_down	C:/tcc/SiGA/app/models/tipo_veic.rb	  def self.drop_down
 drop_down	C:/tcc/SiGA/app/models/cor.rb	  def self.drop_down
 edit	C:/tcc/SiGA/app/controllers/tipo_veics_controller.rb	  def edit
@@ -142,8 +142,8 @@ edit	C:/tcc/SiGA/app/controllers/cores_controller.rb	  def edit
 edit	C:/tcc/SiGA/app/controllers/veiculos_controller.rb	  def edit
 edit	C:/tcc/SiGA/app/controllers/uhs_controller.rb	  def edit
 edit	C:/tcc/SiGA/app/controllers/tipo_uhs_controller.rb	  def edit
-edit	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def edit
 edit	C:/tcc/SiGA/app/controllers/modelos_controller.rb	  def edit
+edit	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def edit
 endereco	C:/tcc/SiGA/app/models/uh.rb	  def endereco
 formata_tel	C:/tcc/SiGA/app/models/uh.rb	  def formata_tel(telefone)
 index	C:/tcc/SiGA/app/controllers/welcome_controller.rb	  def index
@@ -156,8 +156,8 @@ index	C:/tcc/SiGA/app/controllers/cores_controller.rb	  def index
 index	C:/tcc/SiGA/app/controllers/veiculos_controller.rb	  def index
 index	C:/tcc/SiGA/app/controllers/uhs_controller.rb	  def index
 index	C:/tcc/SiGA/app/controllers/tipo_uhs_controller.rb	  def index
-index	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def index
 index	C:/tcc/SiGA/app/controllers/modelos_controller.rb	  def index
+index	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def index
 new	C:/tcc/SiGA/app/controllers/tipo_veics_controller.rb	  def new
 new	C:/tcc/SiGA/app/controllers/tipo_pessoas_controller.rb	  def new
 new	C:/tcc/SiGA/app/controllers/tipo_funcs_controller.rb	  def new
@@ -167,8 +167,8 @@ new	C:/tcc/SiGA/app/controllers/cores_controller.rb	  def new
 new	C:/tcc/SiGA/app/controllers/veiculos_controller.rb	  def new
 new	C:/tcc/SiGA/app/controllers/uhs_controller.rb	  def new
 new	C:/tcc/SiGA/app/controllers/tipo_uhs_controller.rb	  def new
-new	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def new
 new	C:/tcc/SiGA/app/controllers/modelos_controller.rb	  def new
+new	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def new
 search	C:/tcc/SiGA/app/models/veiculo.rb	  def self.search 
 search	C:/tcc/SiGA/app/models/pessoa.rb	  def self.search 
 search	C:/tcc/SiGA/app/controllers/veiculos_controller.rb	  def search
@@ -182,8 +182,8 @@ show	C:/tcc/SiGA/app/controllers/cores_controller.rb	  def show
 show	C:/tcc/SiGA/app/controllers/veiculos_controller.rb	  def show
 show	C:/tcc/SiGA/app/controllers/uhs_controller.rb	  def show
 show	C:/tcc/SiGA/app/controllers/tipo_uhs_controller.rb	  def show
-show	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def show
 show	C:/tcc/SiGA/app/controllers/modelos_controller.rb	  def show
+show	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def show
 test_homepage	C:/tcc/SiGA/test/performance/browsing_test.rb	  def test_homepage
 update	C:/tcc/SiGA/app/controllers/tipo_veics_controller.rb	  def update
 update	C:/tcc/SiGA/app/controllers/tipo_pessoas_controller.rb	  def update
@@ -194,5 +194,5 @@ update	C:/tcc/SiGA/app/controllers/cores_controller.rb	  def update
 update	C:/tcc/SiGA/app/controllers/veiculos_controller.rb	  def update
 update	C:/tcc/SiGA/app/controllers/uhs_controller.rb	  def update
 update	C:/tcc/SiGA/app/controllers/tipo_uhs_controller.rb	  def update
-update	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def update
 update	C:/tcc/SiGA/app/controllers/modelos_controller.rb	  def update
+update	C:/tcc/SiGA/app/controllers/pessoas_controller.rb	  def update
