@@ -11,11 +11,13 @@
 
 <% @pessoas.each do |pessoa| %>
   <tr>
+    <!--<%= puts "<td rowspan = " + pessoa.uhs.length.to_s + ">" + pessoa.nome %></td>-->
     <td><%= pessoa.nome %></td>
     <td><%= pessoa.rg %></td>
     <td><%= pessoa.tipo_pessoa.tipo %></td>
     <% pessoa.uhs.each do |p| %>
-    <td><%= p.endereco %></td>
+    <% puts "<tr>" + p.endereco + "</tr>"  %>
+      
     <% end %>
     <td><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
     <td><%= link_to 'Excluir', pessoa, confirm: 'Tem certeza que deseja excluir esta pessoa?', method: :delete %></td>
