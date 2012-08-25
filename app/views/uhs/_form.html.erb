@@ -1,0 +1,37 @@
+<%= form_for(@uh) do |f| %>
+  <% if @uh.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@uh.errors.count, "error") %> prohibited this uh from being saved:</h2>
+
+      <ul>
+      <% @uh.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Tipo" %><br />
+    <%= f.select :tipo_uh_id, options_from_collection_for_select(TipoUh.find(:all, :order => "tipo ASC"), "id", "tipo"), :prompt => "Selecione" %>
+  </div>
+  <div class="field">
+    <%= f.label :quadra %><br />
+    <%= f.text_field :quadra, :maxlength => 3 %>
+  </div>
+  <div class="field">
+    <%= f.label :conjunto %><br />
+    <%= f.text_field :conjunto, :maxlength => 3 %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero, :maxlength => 3 %>
+  </div>
+  <div class="field">
+    <%= f.label :telefone %><br />
+    <%= f.telephone_field :telefone, :maxlength => 8 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

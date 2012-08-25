@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  matricula: 1
+  nome: MyString
+  senha: MyString
+  tipo_func: 
+  uh: 
+
+two:
+  matricula: 1
+  nome: MyString
+  senha: MyString
+  tipo_func: 
+  uh: 

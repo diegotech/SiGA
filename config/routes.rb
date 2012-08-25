@@ -1,7 +1,39 @@
 SiGA::Application.routes.draw do
-  get "welcome/index"
+  resources :uhs
+
+  resources :tipo_uhs
+
+  resources :modelos
+
+  resources :funcionarios
+
+  resources :tipo_funcs
+
+  resources :veiculos
+
+  resources :cores
+
+  resources :marcas
+
+  resources :tipo_veics
 
   resources :pessoas
+
+  resources :tipo_pessoas
+  
+  resources :residencias
+  
+  match 'pessoas/search' => 'pessoas#search', :via => [:get, :post]
+  
+  match 'veiculos/search' => 'veiculos#search', :via => [:get, :post]
+  
+  match 'uhs/search' => 'uhs#search', :via => [:get, :post]
+  
+  match 'acessos/search' => 'acessos#search', :via => [:get, :post]
+  
+  match 'funcionarios/search' => 'funcionarios#search', :via => [:get, :post]
+ 
+  get "welcome/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

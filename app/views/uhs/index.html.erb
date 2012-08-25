@@ -1,0 +1,32 @@
+<h1>Unidades Habitacionais</h1>
+
+<table>
+  <tr>
+    <th>Tipo</th>
+    <th>Quadra</th>
+    <th>Conjunto</th>
+    <th>Numero</th>
+    <th>Telefone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @uhs.each do |uh| %>
+  <tr>
+    <td><%= uh.tipo_uh.tipo %></td>
+    <td><%= uh.quadra %></td>
+    <td><%= uh.conjunto %></td>
+    <td><%= uh.numero %></td>
+    <td><%= uh.telefone %></td>
+    <td><%= uh.pessoas%>
+    <td><%= link_to 'Ver', uh %></td>
+    <td><%= link_to 'Editar', edit_uh_path(uh) %></td>
+    <td><%= link_to 'Excluir', uh, confirm: 'Tem certeza que deseja excluir esta UH?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Uh', new_uh_path %>

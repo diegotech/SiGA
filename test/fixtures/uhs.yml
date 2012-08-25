@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tipo_uh: 
+  quadra: MyString
+  conjunto: MyString
+  numero: MyString
+  telefone: MyString
+
+two:
+  tipo_uh: 
+  quadra: MyString
+  conjunto: MyString
+  numero: MyString
+  telefone: MyString

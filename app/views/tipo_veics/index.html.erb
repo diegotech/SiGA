@@ -1,0 +1,23 @@
+<h1>Listing tipo_veics</h1>
+
+<table>
+  <tr>
+    <th>Tipo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tipo_veics.each do |tipo_veic| %>
+  <tr>
+    <td><%= tipo_veic.tipo %></td>
+    <td><%= link_to 'Show', tipo_veic %></td>
+    <td><%= link_to 'Edit', edit_tipo_veic_path(tipo_veic) %></td>
+    <td><%= link_to 'Destroy', tipo_veic, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tipo veic', new_tipo_veic_path %>

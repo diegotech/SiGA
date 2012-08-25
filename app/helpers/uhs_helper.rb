@@ -1,0 +1,2 @@
+module UhsHelper
+end

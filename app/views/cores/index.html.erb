@@ -1,0 +1,23 @@
+<h1>Cores</h1>
+
+<table>
+  <tr>
+    <th>Cor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cores.each do |cor| %>
+  <tr>
+    <td><%= cor.cor %></td>
+    <td><%= link_to 'Show', cor %></td>
+    <td><%= link_to 'Edit', edit_cor_path(cor) %></td>
+    <td><%= link_to 'Destroy', cor, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cor', new_cor_path %>

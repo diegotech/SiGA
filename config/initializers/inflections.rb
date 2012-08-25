@@ -13,3 +13,10 @@
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+ActiveSupport::Inflector.inflections do |inflect|  
+    inflect.irregular 'cor', 'cores'
+    inflect.irregular 'modelo', 'modelos'
+    inflect.irregular 'veiculo', 'veiculos'
+    inflect.irregular 'funcionario', 'funcionarios'
+
+end 

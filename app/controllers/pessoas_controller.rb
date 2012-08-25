@@ -10,6 +10,10 @@ class PessoasController < ApplicationController
     end
   end
 
+  def search
+  @pessoas = Pessoa.search params[:search]
+end
+  
   # GET /pessoas/1
   # GET /pessoas/1.json
   def show
@@ -35,15 +39,23 @@ class PessoasController < ApplicationController
   # GET /pessoas/1/edit
   def edit
     @pessoa = Pessoa.find(params[:id])
+
   end
 
+    
   # POST /pessoas
   # POST /pessoas.json
   def create
-    @pessoa = Pessoa.new(params[:pessoa])
 
+    @pessoa = Pessoa.new(params[:pessoa])
+    
     respond_to do |format|
       if @pessoa.save
+        p = Residencia.new
+        p.pessoa_id = @pessoa.id
+        p.uh_id = params[:uh] 
+        p.save
+        
         format.html { redirect_to @pessoa, notice: 'Pessoa was successfully created.' }
         format.json { render json: @pessoa, status: :created, location: @pessoa }
       else
@@ -60,6 +72,12 @@ class PessoasController < ApplicationController
 
     respond_to do |format|
       if @pessoa.update_attributes(params[:pessoa])
+       #p.pessoa_id = params[:id]
+       #p = Residencia.new
+        p = Residencia.find_by_pessoa_id params[:id]
+        p.uh_id = params[:uh] 
+        p.save
+        
         format.html { redirect_to @pessoa, notice: 'Pessoa was successfully updated.' }
         format.json { head :no_content }
       else

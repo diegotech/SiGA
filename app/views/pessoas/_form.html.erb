@@ -1,3 +1,4 @@
+
 <%= form_for(@pessoa) do |f| %>
   <% if @pessoa.errors.any? %>
     <div id="error_explanation">
@@ -12,16 +13,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br />
-    <%= f.number_field :id %>
-  </div>
-  <div class="field">
     <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome, :maxlength => 50 %>
   </div>
   <div class="field">
-    <%= f.label :senha %><br />
-    <%= f.text_field :senha %>
+    RG <br/>
+    <%= f.text_field :rg, :maxlength => 15 %>
+  </div>
+  <div class="field">
+    <%= f.label "Tipo" %><br />
+    <%= f.select :tipo_pessoa_id, options_from_collection_for_select(TipoPessoa.find(:all, :order => "tipo ASC"), "id", "tipo"), :prompt => "Selecione" %>
+  </div>
+  <div class="field">
+    Unidade Habitacional <br/>
+    <%= select_tag "uh", options_from_collection_for_select(Uh.find(:all, :order => "quadra, conjunto, numero ASC"), "id", "endereco"), :prompt => "Selecione" %>
+    
+
   </div>
   <div class="actions">
     <%= f.submit %>

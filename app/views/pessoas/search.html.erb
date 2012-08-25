@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>RG</th>
+    <th>Tipo</th>
+    <th>Endereço</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pessoas.each do |pessoa| %>
+  <tr>
+    <td><%= pessoa.nome %></td>
+    <td><%= pessoa.rg %></td>
+    <td><%= pessoa.tipo_pessoa.tipo %></td>
+    <% pessoa.uhs.each do |p| %>
+    <td><%= p.endereco %></td>
+    <% end %>
+    <td><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
+    <td><%= link_to 'Excluir', pessoa, confirm: 'Tem certeza que deseja excluir esta pessoa?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pessoa', new_pessoa_path %>

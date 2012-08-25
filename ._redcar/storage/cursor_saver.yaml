@@ -1,0 +1,23 @@
+--- 
+cursor_positions: 
+  - :path: Gemfile
+    :cursor_offset: 0
+    :timestamp: 2012-07-10 21:48:57.505000 -03:00
+  - :path: public/404.html
+    :cursor_offset: 0
+    :timestamp: 2012-07-10 21:06:07.330000 -03:00
+  - :path: public/favicon.ico
+    :cursor_offset: 0
+    :timestamp: 2012-07-10 21:06:07.330000 -03:00
+  - :path: Rakefile
+    :cursor_offset: 9
+    :timestamp: 2012-07-10 21:06:06 -03:00
+    :selection_offset: 178
+    :block_selection_mode: false
+  - :path: index.html
+    :cursor_offset: 0
+    :timestamp: 2012-07-10 21:06:07 -03:00
+  - :path: public/index.html
+    :cursor_offset: 591
+    :timestamp: 2012-08-13 19:06:49.575000 -03:00
+files_to_retain: 0

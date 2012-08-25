@@ -1,0 +1,38 @@
+<%= form_for(@funcionario) do |f| %>
+  <% if @funcionario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@funcionario.errors.count, "error") %> prohibited this funcionario from being saved:</h2>
+
+      <ul>
+      <% @funcionario.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :matricula %><br />
+    <%= f.number_field :matricula, :maxlength => 6 %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :senha %><br />
+    <%= f.password_field :senha %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_func %><br />
+    <%= select_tag :tipo_func_id, options_from_collection_for_select(TipoFunc.find(:all, :order => "tipo ASC"), "id", "tipo"), :prompt => "Selecione" %>
+  </div>
+ <div class="field">
+    Unidade Habitacional <br/>
+    <%= select_tag "uh", options_from_collection_for_select(Uh.all, "id", "to_s" ), :prompt => "Selecione" %>
+  </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
