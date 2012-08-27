@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120824183525) do
+ActiveRecord::Schema.define(:version => 20120827145423) do
 
   create_table "cores", :force => true do |t|
     t.string   "cor"
@@ -48,14 +48,24 @@ ActiveRecord::Schema.define(:version => 20120824183525) do
   add_index "modelos", ["marca_id"], :name => "index_modelos_on_marca_id"
 
   create_table "motorista", :force => true do |t|
-    t.integer  "residencia_id"
     t.integer  "veiculo_id"
+    t.integer  "residencia_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
   add_index "motorista", ["residencia_id"], :name => "index_motorista_on_residencia_id"
   add_index "motorista", ["veiculo_id"], :name => "index_motorista_on_veiculo_id"
+
+  create_table "motoristas", :force => true do |t|
+    t.integer  "veiculo_id"
+    t.integer  "residencia_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "motoristas", ["residencia_id"], :name => "index_motoristas_on_residencia_id"
+  add_index "motoristas", ["veiculo_id"], :name => "index_motoristas_on_veiculo_id"
 
   create_table "pessoas", :force => true do |t|
     t.string   "nome"

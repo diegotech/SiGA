@@ -47,11 +47,11 @@ class VeiculosController < ApplicationController
 
     respond_to do |format|
       if @veiculo.save
-        p = Motorista.new
-        p.veiculo_id = @veiculo.id
+        m = Motorista.new
+        m.veiculo_id = @veiculo.id
         r = Residencia.find_by_uh_id params[:resid]
-        p.residencia_id = r.id 
-        p.save
+        m.residencia_id = r.id 
+        m.save
         
         format.html { redirect_to @veiculo, notice: 'Veiculo was successfully created.' }
         format.json { render json: @veiculo, status: :created, location: @veiculo }
@@ -69,6 +69,12 @@ class VeiculosController < ApplicationController
 
     respond_to do |format|
       if @veiculo.update_attributes(params[:veiculo])
+        
+        m = Motorista.find_by_veiculo_id params[:id]
+        Residencia.find_by_uh_id params[:resid]
+        m.residencia_id = r.id 
+        m.save
+        
         format.html { redirect_to @veiculo, notice: 'Veiculo was successfully updated.' }
         format.json { head :no_content }
       else

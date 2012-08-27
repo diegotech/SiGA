@@ -8,6 +8,7 @@ class Pessoa < ActiveRecord::Base
   
   validates :nome, :presence => true, :length => { :minimum => 2}
   validates :rg, :presence => true, :length => {:minimum => 5}
+
   
   # pesquisa por rg ou nome
   def self.search (search)

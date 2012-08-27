@@ -14,12 +14,6 @@ cursor_positions:
     :timestamp: 2012-07-10 21:06:06 -03:00
     :selection_offset: 178
     :block_selection_mode: false
-  - :path: index.html
-    :cursor_offset: 0
-    :timestamp: 2012-07-10 21:06:07 -03:00
-  - :path: public/index.html
-    :cursor_offset: 591
-    :timestamp: 2012-08-13 19:06:49.575000 -03:00
   - :path: Gemfile.lock
     :cursor_offset: 2503
     :timestamp: 2012-08-25 00:08:38.234000 -03:00
@@ -29,4 +23,29 @@ cursor_positions:
   - :path: app/views/pessoas/show.html.erb
     :cursor_offset: 0
     :timestamp: 2012-08-20 23:51:04 -03:00
+  - :path: public/index.html.erb
+    :cursor_offset: 494
+    :timestamp: 2012-08-25 00:43:46.811000 -03:00
+  - :path: app/views/pessoas/index.html.erb
+    :cursor_offset: 61
+    :timestamp: 2012-08-24 14:43:43 -03:00
+    :selection_offset: 18
+    :block_selection_mode: false
+  - :path: public/outra index.html
+    :cursor_offset: 493
+    :timestamp: 2012-08-25 00:43:46.811000 -03:00
+  - :path: index.html
+    :cursor_offset: 0
+    :timestamp: 2012-07-10 21:06:07.340000 -03:00
+  - :path: public/index.html
+    :cursor_offset: 0
+    :timestamp: 2012-08-25 00:53:25.447000 -03:00
+  - :path: app/views/pessoas/search.html.erb
+    :cursor_offset: 439
+    :timestamp: 2012-08-25 01:12:37.446000 -03:00
+    :selection_offset: 438
+    :block_selection_mode: false
+  - :path: app/controllers/pessoas_controller.rb
+    :cursor_offset: 1663
+    :timestamp: 2012-08-25 01:05:34.266000 -03:00
 files_to_retain: 0

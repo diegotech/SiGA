@@ -1,3 +1,4 @@
 --- 
 open_files: 
-  - public/index.html
+  - app/views/pessoas/search.html.erb
+  - app/controllers/pessoas_controller.rb

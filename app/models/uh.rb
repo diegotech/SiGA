@@ -10,9 +10,16 @@ class Uh < ActiveRecord::Base
      "Quadra " + quadra + ", Conjunto " + conjunto + ", " + tipo_uh.tipo + " " + numero + formata_tel(telefone)
   end
   
+  #retorna endereco usando parametros
+  def address id
+    find_by_id id
+    endereco
+end
+  
   #valida campos
   validates_format_of :telefone, :with => /^[\d]+$/, :message => " - Somente numeros"
   validates_length_of :telefone, :is => 8, :message => " - Deve ter dez digitos"
+
   
   #retorna número do telefone formatado
   def formata_tel(telefone)

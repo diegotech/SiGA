@@ -1,4 +1,7 @@
 SiGA::Application.routes.draw do
+    
+  get "home/index"
+
   resources :uhs
 
   resources :tipo_uhs
@@ -23,6 +26,10 @@ SiGA::Application.routes.draw do
   
   resources :residencias
   
+  resources :motoristas
+  
+  match 'home' => 'home#index', :via => [:get]
+  
   match 'pessoas/search' => 'pessoas#search', :via => [:get, :post]
   
   match 'veiculos/search' => 'veiculos#search', :via => [:get, :post]
@@ -33,7 +40,7 @@ SiGA::Application.routes.draw do
   
   match 'funcionarios/search' => 'funcionarios#search', :via => [:get, :post]
  
-  get "welcome/index"
+  #get "welcome/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -84,7 +91,7 @@ SiGA::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'welcome#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

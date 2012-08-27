@@ -1,0 +1,28 @@
+<h1>Veiculos</h1>
+
+<table>
+  <tr>
+    <th>Placa</th>
+    <th>Tipo</th>
+    <th>Veiculo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @veiculos.each do |veiculo| %>
+  <tr>
+    <td><%= veiculo.placa %></td>
+    <td><%= veiculo.tipo_veic.tipo %></td>
+    <td><%= veiculo.modelo.marca.marca + " - " + veiculo.modelo.modelo + " " + veiculo.cor.cor %></td>
+    <td><%= veiculo.residencias %></td>
+    <td><%= link_to 'Ver', veiculo %></td>
+    <td><%= link_to 'Editar', edit_veiculo_path(veiculo) %></td>
+    <td><%= link_to 'Excluir', veiculo, confirm: 'Tem certeza que deseja excluir este veiculo?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Novo Veículo', new_veiculo_path %>

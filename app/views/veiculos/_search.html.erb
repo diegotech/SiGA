@@ -1,0 +1,6 @@
+
+<%= form_tag :controller => "veiculos", :action => "search", :method => "get" do %>
+ <%= search_field_tag :search, params[:search], :id => 'search_field' %>
+ <%= submit_tag "Pesquisar", :name => nil %> 
+ <% end %>
+
