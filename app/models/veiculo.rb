@@ -14,6 +14,12 @@ class Veiculo < ActiveRecord::Base
   validates :placa, :presence => true, :length => {:minimum => 7}
   validates_presence_of :modelo
   
+  
+  #retorna marca + modelo
+  def caracteristicas veiculo
+    veiculo.modelo.marca.marca + "/" + veiculo.modelo.modelo + " | Cor: " + veiculo.cor.cor
+  end
+  
   # pesquisa por rg ou nome
   def self.search (search)
     parametro = "%" + search + "%"

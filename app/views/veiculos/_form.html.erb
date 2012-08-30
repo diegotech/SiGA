@@ -7,7 +7,7 @@
         $('#modelo_id').empty();
         $("<option value=\"nil\">Selecione</option>").appendTo('select[name*="modelo_id"]');
         $.each(data, function(i,item){
-          $("<option value=\"" + item.id + "\">" + item.modelo + "</option>").appendTo('select[name*="modelo"]');
+          $("<option value=\"" + item.id + "\">" + item.modelo + "</option>").appendTo('select[name*="modelo_id"]');
         });
       })
     });
@@ -32,8 +32,8 @@
     <%= f.text_field :placa, maxlength: 7 %>
   </div>
   <div class="field">
-    <%= f.label :tipo_veic %><br />
-    <%= f.select :tipo_veic_id, TipoVeic.drop_down %>
+    Tipo:<br />
+    <%= f.select :tipo_veic_id, options_from_collection_for_select(TipoVeic.find(:all, :order => "tipo ASC"), "id", "tipo"), :prompt => "Selecione" %>
   </div>
    <div class="field">
     <%= f.label :marca %><br />
@@ -41,14 +41,14 @@
   </div>
    <div class="field">
     <%= f.label :modelo %><br />
-    <%= f.select :modelo_id, [] %>
+    <%= select_tag :modelo_id, [] %>
   </div>
   <div class="field">
-    <%= label_tag "Residencia" %><br />
+    Residência<br />
     <%= select_tag "resid", options_from_collection_for_select(Uh.find(:all, :order => "quadra, conjunto, numero ASC"), "id", "endereco"), :prompt => "Selecione" %>
   <div class="field">
     <%= f.label :cor %><br />
-    <%= f.select :cor_id, Cor.drop_down, :prompt => "Selecione" %>
+    <%= f.select :cor_id, options_from_collection_for_select(Cor.find(:all, :order => "cor ASC"), "id", "cor"), :prompt => "Selecione" %>
   </div>
   <div class="actions">
     <%= f.submit %>

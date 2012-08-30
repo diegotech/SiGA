@@ -1,0 +1,36 @@
+<h1>Listing acessos</h1>
+
+<table border = "1">
+  <tr>
+    <th>Hora do Acesso</th>
+    <th>Residencia</th>
+    <th>Nome</th>
+    <th>Veículo</th>
+    <th>Funcionário</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @acessos.each do |acesso| %>
+  <tr>
+    <td><%= acesso.created_at.strftime("%d/%m/%Y - %H:%M") %></td>
+    <% if acesso.motorista_id.nil?%>
+    <td><%= acesso.residencia.uh.endereco %></td>
+    <td><%= acesso.residencia.pessoa.nome %></td>
+    <td>Pedestre</td>
+    <% else %>
+    <td><%= acesso.motorista.residencia.uh.endereco %></td>
+    <td><%= acesso.motorista.residencia.pessoa.nome %></td>
+    <td><%= acesso.motorista.veiculo.caracteristicas acesso.motorista.veiculo %></td>
+    <% end %>
+    <td><%= acesso.funcionario.nome %></td>
+
+    <td><%= link_to 'Edit', edit_acesso_path(acesso) %></td>
+    <td><%= link_to 'Destroy', acesso, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Acesso', new_acesso_path %>

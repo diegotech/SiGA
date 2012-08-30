@@ -1,10 +1,12 @@
 <h1>Veiculos</h1>
 
-<table>
+<table border = 1>
   <tr>
     <th>Placa</th>
     <th>Tipo</th>
     <th>Veiculo</th>
+    <th>Motorista</th>
+    <th>Endereco</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,12 +16,20 @@
   <tr>
     <td><%= veiculo.placa %></td>
     <td><%= veiculo.tipo_veic.tipo %></td>
-    <td><%= veiculo.modelo.marca.marca + " - " + veiculo.modelo.modelo + " " + veiculo.cor.cor %></td>
-    <td><%= veiculo.residencias %></td>
-    <td><%= link_to 'Ver', veiculo %></td>
-    <td><%= link_to 'Editar', edit_veiculo_path(veiculo) %></td>
-    <td><%= link_to 'Excluir', veiculo, confirm: 'Tem certeza que deseja excluir este veiculo?', method: :delete %></td>
-  </tr>
+    <td><%= veiculo.caracteristicas veiculo %></td>
+    <% veiculo.motoristas.each do |v| %>
+    <%= "<td>".html_safe %>
+    <%= v.residencia.pessoa.nome %>
+    <%= "<td>".html_safe %>
+    <%= v.residencia.uh.endereco %>
+    
+    <td ><%= link_to 'Editar', edit_veiculo_path(veiculo) %></td>
+    <td ><%= link_to 'Excluir', veiculo, confirm: 'Tem certeza que deseja excluir esta pessoa?', method: :delete %></td>
+    <td ><%= link_to 'Acesso Veículo', "acesso/" + v.id.to_s %></td>
+    <%= "</tr>".html_safe %>
+
+    
+    <% end %>
 <% end %>
 </table>
 

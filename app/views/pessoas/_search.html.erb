@@ -1,5 +1,5 @@
 
-<%= form_tag :controller => "pessoas", :action => "search", :method => "get" do %>
+<%= form_tag :controller => "pessoas", :action => "search" do %>
  <%= search_field_tag :search, params[:search], :id => 'search_field' %>
  <%= submit_tag "Pesquisar", :name => nil %> 
  <% end %>

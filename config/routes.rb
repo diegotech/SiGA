@@ -1,6 +1,20 @@
 SiGA::Application.routes.draw do
     
-  get "home/index"
+  match 'home' => 'home#index'
+  
+  match 'pessoas/search' => 'pessoas#search'
+  
+  match 'pessoas/acesso/:id' => 'acessos#create_pedestre'
+  
+  match 'veiculos/acesso/:id' => 'acessos#create_veiculo'
+  
+  match 'veiculos/search' => 'veiculos#search'
+  
+  match 'uhs/search' => 'uhs#search'
+    
+  match 'funcionarios/search' => 'funcionarios#search'
+  
+  resources :acessos
 
   resources :uhs
 
@@ -27,20 +41,7 @@ SiGA::Application.routes.draw do
   resources :residencias
   
   resources :motoristas
-  
-  match 'home' => 'home#index', :via => [:get]
-  
-  match 'pessoas/search' => 'pessoas#search', :via => [:get, :post]
-  
-  match 'veiculos/search' => 'veiculos#search', :via => [:get, :post]
-  
-  match 'uhs/search' => 'uhs#search', :via => [:get, :post]
-  
-  match 'acessos/search' => 'acessos#search', :via => [:get, :post]
-  
-  match 'funcionarios/search' => 'funcionarios#search', :via => [:get, :post]
  
-  #get "welcome/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Residencia:</b>
+  <%= @acesso.residencia %>
+</p>
+
+<p>
+  <b>Motorista:</b>
+  <%= @acesso.motorista %>
+</p>
+
+<p>
+  <b>Funcionario:</b>
+  <%= @acesso.funcionario %>
+</p>
+
+
+<%= link_to 'Edit', edit_acesso_path(@acesso) %> |
+<%= link_to 'Back', acessos_path %>

@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120827145423) do
+ActiveRecord::Schema.define(:version => 201208291044402) do
+
+  create_table "acessos", :force => true do |t|
+    t.integer  "residencia_id"
+    t.integer  "motorista_id"
+    t.integer  "funcionario_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "acessos", ["funcionario_id"], :name => "index_acessos_on_funcionario_id"
+  add_index "acessos", ["motorista_id"], :name => "index_acessos_on_motorista_id"
+  add_index "acessos", ["residencia_id"], :name => "index_acessos_on_residencia_id"
 
   create_table "cores", :force => true do |t|
     t.string   "cor"
@@ -126,7 +138,6 @@ ActiveRecord::Schema.define(:version => 20120827145423) do
   create_table "veiculos", :force => true do |t|
     t.string   "placa"
     t.integer  "tipo_veic_id"
-    t.integer  "marca_id"
     t.integer  "cor_id"
     t.integer  "modelo_id"
     t.datetime "created_at",   :null => false
@@ -134,7 +145,6 @@ ActiveRecord::Schema.define(:version => 20120827145423) do
   end
 
   add_index "veiculos", ["cor_id"], :name => "index_veiculos_on_cor_id"
-  add_index "veiculos", ["marca_id"], :name => "index_veiculos_on_marca_id"
   add_index "veiculos", ["modelo_id"], :name => "index_veiculos_on_modelo_id"
   add_index "veiculos", ["tipo_veic_id"], :name => "index_veiculos_on_tipo_veic_id"
 

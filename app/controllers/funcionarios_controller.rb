@@ -41,7 +41,7 @@ class FuncionariosController < ApplicationController
   # POST /funcionarios.json
   def create
     @funcionario = Funcionario.new(params[:funcionario])
-
+    @funcionario.tipo_func_id = :tipo_func_id
     respond_to do |format|
       if @funcionario.save
         format.html { redirect_to @funcionario, notice: 'Funcionario was successfully created.' }
@@ -57,6 +57,7 @@ class FuncionariosController < ApplicationController
   # PUT /funcionarios/1.json
   def update
     @funcionario = Funcionario.find(params[:id])
+    @funcionario.tipo_func_id = :tipo_func_id
 
     respond_to do |format|
       if @funcionario.update_attributes(params[:funcionario])

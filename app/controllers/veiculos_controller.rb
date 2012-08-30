@@ -44,6 +44,8 @@ class VeiculosController < ApplicationController
   # POST /veiculos.json
   def create
     @veiculo = Veiculo.new(params[:veiculo])
+    @veiculo.modelo_id = :modelo_id
+
 
     respond_to do |format|
       if @veiculo.save
@@ -66,12 +68,15 @@ class VeiculosController < ApplicationController
   # PUT /veiculos/1.json
   def update
     @veiculo = Veiculo.find(params[:id])
-
+    @veiculo.modelo_id =  :modelo_id
+    @veiculo.tipo_veic_id = "tipo"
+    @veiculo.cor_id = "cor" 
+    
     respond_to do |format|
       if @veiculo.update_attributes(params[:veiculo])
         
         m = Motorista.find_by_veiculo_id params[:id]
-        Residencia.find_by_uh_id params[:resid]
+        r = Residencia.find_by_uh_id params[:resid]
         m.residencia_id = r.id 
         m.save
         

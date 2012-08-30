@@ -1,0 +1,23 @@
+<%= form_for(@acesso) do |f| %>
+  <% if @acesso.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@acesso.errors.count, "error") %> prohibited this acesso from being saved:</h2>
+
+      <ul>
+      <% @acesso.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hora %><br />
+    <%= f.datetime_select :hora %>
+  </div>
+  
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :marca %><br />
-    <%= f.select :marca_id, Marca.drop_down %>
+    <%= select_tag :marca_id, options_from_collection_for_select(Marca.find(:all, :order => "marca ASC"), "id", "marca"), :prompt => "Selecione" %>
   </div>
   <div class="actions">
     <%= f.submit %>

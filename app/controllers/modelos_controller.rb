@@ -2,6 +2,7 @@ class ModelosController < ApplicationController
   # GET /modelos
   # GET /modelos.json
   def index
+    #@modelos = Modelo.all
     @modelos = Modelo.find_all_by_marca_id (params[:marca_id])
 
     

@@ -8,6 +8,7 @@
     <th>Endereços</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @pessoas.each do |pessoa| %>
@@ -20,12 +21,13 @@
     <%= pessoa.rg %></td>
     <td rowspan = <%= x %>>
     <%= pessoa.tipo_pessoa.tipo %></td>
-    
-    <% pessoa.uhs.each do |p| %>
+
+    <% pessoa.residencias.each do |p| %>
     <%= "<td>".html_safe %>
-    <%= p.endereco %>
+    <%= p.uh.endereco %>
     <td ><%= link_to 'Editar', edit_pessoa_path(pessoa) %></td>
     <td ><%= link_to 'Excluir', pessoa, confirm: 'Tem certeza que deseja excluir esta pessoa?', method: :delete %></td>
+    <td ><%= link_to 'Acesso Pedestre', "acesso/" + p.id.to_s %></td>
     <%= "</tr>".html_safe %>
 
     
